@@ -7,9 +7,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { ContributorSelectorComponent } from './contributor-selector/contributor-selector.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ContributorSelectorComponent, ToolbarComponent],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
@@ -18,6 +24,10 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatButtonModule,
     MatInputModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
