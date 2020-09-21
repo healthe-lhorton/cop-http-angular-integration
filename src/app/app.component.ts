@@ -35,28 +35,11 @@ export class AppComponent {
    */
   userOptions$: Observable<SelectOption<string>[]>;
 
-  /**
-   * TODO: Step-1 Pt.2
-   * Solution
-   * @example
-   * ``` typescript
-   * tableData$: Observable<
-   * CatFactTableItem[]
-   * > = this.catFactService.getAllFacts();
-   * ```
-   */
-  tableData$: Observable<CatFactTableItem[]>;
+  tableData$: Observable<
+    CatFactTableItem[]
+  > = this.catFactService.getAllFacts();
 
-  /**
-   * TODO: Step-1 Pt.1
-   * Solution
-   * @example
-   * ``` typescript
-   * constructor(public catFactService: CatFactService) {
-   * }
-   * ```
-   */
-  constructor() {}
+  constructor(public catFactService: CatFactService) {}
 
   /**
    * Solution
