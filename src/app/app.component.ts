@@ -1,9 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CatFactService } from './cat-fact.service';
 import { Observable } from 'rxjs';
-import { CatFactTableItem, SelectOption, User } from './cat-fact.models';
+import { CatFactTableItem, SelectOption } from './cat-fact.models';
 import { map } from 'rxjs/operators';
-import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -12,37 +11,66 @@ import { uniqBy } from 'lodash';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  title = 'cop-webcall-demo';
+  /**
+   *  Solution
+   *
+   *  @example
+   *
+   *  ``` typescript
+   *  userOptions$: Observable<
+   *  SelectOption<string>[]
+   *  > = this.catFactService.getUsers().pipe(
+   *  map((users: User[]) =>
+   *  // Only get unique users by id
+   *  uniqBy(users, '_id')
+   *  // Filter out undefined
+   *  .filter((user) => !!user)
+   *  // Convert to Select Option
+   *  .map((user) => ({
+   *         label: `${user.name.first} ${user.name.last}`,
+   *         value: user._id,
+   *       })))
+   *  );
+   *  ```
+   */
+  userOptions$: Observable<SelectOption<string>[]>;
 
-  userOptions$: Observable<
-    SelectOption<string>[]
-  > = this.catFactService.getUsers().pipe(
-    map((users: User[]) =>
-      // Only get unique users by id
-      uniqBy(users, '_id')
-        // Filter out undefined
-        .filter((user) => !!user)
-        // Convert to Select Option
-        .map((user) => ({
-          label: `${user.name.first} ${user.name.last}`,
-          value: user._id,
-        }))
-    )
-  );
+  /**
+   * TODO: Step-1 Pt.2
+   * Solution
+   * @example
+   * ``` typescript
+   * tableData$: Observable<
+   * CatFactTableItem[]
+   * > = this.catFactService.getAllFacts();
+   * ```
+   */
+  tableData$: Observable<CatFactTableItem[]>;
 
-  tableData$: Observable<
-    CatFactTableItem[]
-  > = this.catFactService.getAllFacts();
+  /**
+   * TODO: Step-1 Pt.1
+   * Solution
+   * @example
+   * ``` typescript
+   * constructor(public catFactService: CatFactService) {
+   * }
+   * ```
+   */
+  constructor() {}
 
-  userSelectionChange(id: string): void {
-    this.tableData$ = this.catFactService
-      .getAllFacts()
-      .pipe(
-        map((facts) =>
-          facts.filter((fact) => fact.user && fact.user._id === id)
-        )
-      );
-  }
-
-  constructor(public catFactService: CatFactService) {}
+  /**
+   * Solution
+   * @example
+   * ``` typescript
+   * userSelectionChange(id: string): void {
+   * this.tableData$ = this.catFactService
+   *   .getAllFacts()
+   *   .pipe(
+   *     map((facts) =>
+   *       facts.filter((fact) => fact.user && fact.user._id === id)
+   *     )
+   *   );
+   * }
+   * ```
+   */
 }

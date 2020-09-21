@@ -1,9 +1,7 @@
 <app-toolbar></app-toolbar>
 <main class="main-wrapper">
-  <app-users-selector
-    [userOptions$]="userOptions$"
-    (userOptionChange)="userSelectionChange($event)"
-  ></app-users-selector>
+  <!--  Solution: (userOptionChange)="userSelectionChange($event)"-->
+  <app-users-selector [userOptions$]="userOptions$"></app-users-selector>
   <div class="spacer-small"></div>
   <app-data-table [tableData$]="tableData$"></app-data-table>
 </main>
