@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SelectOption } from '../cat-fact.models';
 
 @Component({
-  selector: 'app-contributor-selector',
+  selector: 'app-users-selector',
   templateUrl: './contributor-selector.component.html',
-  styleUrls: ['./contributor-selector.component.css']
+  styleUrls: ['./contributor-selector.component.css'],
 })
 export class ContributorSelectorComponent implements OnInit {
+  @Input()
+  userOptions$: Observable<SelectOption<string>[]>;
 
-  constructor() { }
+  @Output()
+  userOptionChange = new EventEmitter();
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }

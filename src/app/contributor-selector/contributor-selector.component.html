@@ -1,9 +1,18 @@
 <mat-card>
   <mat-card-header>
     <h4>
-      Contributor:
+      User:
       <mat-form-field>
-        <mat-select placeholder="Select a Contributor"></mat-select>
+        <mat-select
+          placeholder="Select a User"
+          (valueChange)="userOptionChange.emit($event)"
+        >
+          <mat-option
+            *ngFor="let option of userOptions$ | async"
+            [value]="option.value"
+            >{{ option.label }}</mat-option
+          >
+        </mat-select>
       </mat-form-field>
     </h4>
   </mat-card-header>

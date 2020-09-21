@@ -14,10 +14,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { ContributorSelectorComponent } from './contributor-selector/contributor-selector.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DataTableComponent } from './data-table/data-table.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
-  declarations: [AppComponent, ContributorSelectorComponent, ToolbarComponent, DataTableComponent],
+  declarations: [
+    AppComponent,
+    ContributorSelectorComponent,
+    ToolbarComponent,
+    DataTableComponent,
+  ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
@@ -31,6 +37,7 @@ import {HttpClientModule} from '@angular/common/http';
     MatIconModule,
     MatCardModule,
     MatSelectModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

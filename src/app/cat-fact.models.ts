@@ -21,3 +21,14 @@ interface UserName {
   first: string;
   last: string;
 }
+
+export interface SelectOption<V> {
+  label: string;
+  value: V;
+}
+
+export interface CatFactTableItem {
+  text: string;
+  type: string;
+  upvotes: number;
+}

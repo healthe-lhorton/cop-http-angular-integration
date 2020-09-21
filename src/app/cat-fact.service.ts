@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CatFact, CatFactAllResponse, User } from './cat-fact.models';
 import { environment } from '../environments/environment';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +19,7 @@ export class CatFactService {
 
   public getUsers(): Observable<User[]> {
     return this.getAllFacts().pipe(
-      map((facts) => facts.map((fact) => fact.user))
+      map((facts) => facts.map((fact) => fact.user)),
     );
   }
 }
