@@ -9,3 +9,7 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: whitesmoke;
 }
+
+.spacer-small {
+  padding: 16px;
+}

@@ -13,13 +13,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { ContributorSelectorComponent } from './contributor-selector/contributor-selector.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, ContributorSelectorComponent, ToolbarComponent],
+  declarations: [AppComponent, ContributorSelectorComponent, ToolbarComponent, DataTableComponent],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
     CommonModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     MatButtonModule,
