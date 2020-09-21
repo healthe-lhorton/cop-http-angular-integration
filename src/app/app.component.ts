@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CatFactService } from './cat-fact.service';
 import { Observable } from 'rxjs';
-import { CatFactTableItem, SelectOption } from './cat-fact.models';
+import { CatFactTableItem, SelectOption, User } from './cat-fact.models';
 import { map } from 'rxjs/operators';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { map } from 'rxjs/operators';
 })
 export class AppComponent {
   /**
+   *  TODO: Step-2 Pt.2
    *  Solution
    *
    *  @example
@@ -59,6 +61,7 @@ export class AppComponent {
   constructor() {}
 
   /**
+   * TODO: Step-3
    * Solution
    * @example
    * ``` typescript
