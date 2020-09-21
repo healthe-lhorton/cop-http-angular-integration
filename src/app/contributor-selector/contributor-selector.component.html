@@ -2,8 +2,6 @@
   <mat-card-header>
     <h4>
       User:
-      <!--
-      TODO: Step-2 Pt.1 Add User Selector
       <mat-form-field>
         <mat-select
           placeholder="Select a User"
@@ -12,11 +10,10 @@
           <mat-option
             *ngFor="let option of userOptions$ | async"
             [value]="option.value"
-            >{{ option.label }}</mat-option
+          >{{ option.label }}</mat-option
           >
         </mat-select>
       </mat-form-field>
-      -->
     </h4>
   </mat-card-header>
 </mat-card>
