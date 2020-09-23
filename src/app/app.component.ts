@@ -13,7 +13,7 @@ import { uniqBy } from 'lodash';
 })
 export class AppComponent {
   /**
-   *  TODO: Step-2 Pt.2
+   *  TODO: Step-2 Pt.1
    *  Solution
    *
    *  @example
